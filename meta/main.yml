@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Andrew Angelo Ang
+  description: Creates an haproxy deployment
+  company: InnoHub, Inc.
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  categories:
+    - system
+dependencies: []
