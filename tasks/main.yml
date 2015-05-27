@@ -1,0 +1,41 @@
+---
+- name: Add haproxy PPA repository
+  apt_repository: repo="ppa:vbernat/haproxy-{{haproxy_version}}" state=present
+  when: ansible_os_family == "Debian"
+  tags: packages
+
+- name: Download haproxy
+  apt: pkg=haproxy state=present update_cache=yes
+  when: ansible_os_family == "Debian"
+  tags: packages
+
+- name: Download haproxy
+  yum: pkg=haproxy-{{haproxy_version}} state=present
+  when: ansible_os_family == "RedHat"
+  tags: packages
+
+- name: Copy SSL certificate
+  template: src=ssl.pem dest=/etc/haproxy/ssl.pem
+
+- name: Configure haproxy
+  template: src=haproxy.cfg dest=/etc/haproxy/haproxy.cfg
+  notify: restart haproxy
+  tags: configuration
+
+- name: Enable init script
+  replace: dest='/etc/default/haproxy'
+    regexp='ENABLED=0'
+    replace='ENABLED=1'
+
+- name: Start haproxy
+  service: name=haproxy state=started enabled=yes
+
+- name: Install socat
+  apt: name=socat state=present
+  when: ansible_os_family == "Debian"
+  tags: packages
+
+- name: Install socat
+  yum: name=socat state=present
+  when: ansible_os_family == "RedHat"
+  tags: packages
