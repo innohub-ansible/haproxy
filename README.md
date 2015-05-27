@@ -8,11 +8,11 @@
 Role Variables
 --------------
 
-haproxy_version : Required : to download the right version
+haproxy_version : Not Required : defaults to 1.5
 
 haproxy_app_name : Required : to identify application name
 
-haproxy_ssl_pem : Required : Sets the haproxy's certificate and  private key
+haproxy_ssl_pem : Not Required : Sets the haproxy's certificate and  private key
 
     -----BEGIN CERTIFICATE-----
     MIIB+zCCAWQCCQCCWEJqWVLYXDANBgkqhkiG9w0BAQUFADBCMQswCQYDVQQGEwJY
@@ -43,7 +43,7 @@ haproxy_ssl_pem : Required : Sets the haproxy's certificate and  private key
     gAGrLMnFDWkogejrk5xVswlMUzjV6TefJAeQDHA1HIIR5g==
     -----END RSA PRIVATE KEY-----
 
-haproxy_stats : Not Required : for stats flag
+haproxy_stats : Not Required : defaults to enable
 
 haproxy_algorithm : Not Required : defaults to roundrobin
 
@@ -52,7 +52,9 @@ haproxy_backend_servers : Required : defines backend servers
       - {name: server1, ip: 192.168.1.10, port: 80}
       - {name: server2, ip: 192.168.1.11, port: 80}
 
-haproxy_stats_users : Required : defines user for haproxy's web access
+haproxy_stats_users : Required : defines user credentials for haproxy's web access
+
+      - {username: username, password: password}
 
 License
 -------
