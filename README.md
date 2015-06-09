@@ -2,7 +2,7 @@
 =========
 
 * Creates an haproxy deployment
-* Sets up SSL certificates and key
+* When SSL option is enabled, sets up SSL certificates and key
 * Sets up an haproxy user
 
 Role Variables
@@ -12,7 +12,9 @@ haproxy_version : Not Required : defaults to 1.5
 
 haproxy_app_name : Required : to identify application name
 
-haproxy_ssl_pem : Not Required : Sets the haproxy's certificate and  private key
+haproxy_ssl : Not Required : Sets haproxy's SSL option
+
+haproxy_ssl_pem : Not Required : Sets haproxy's SSL certificate and private key
 
     -----BEGIN CERTIFICATE-----
     MIIB+zCCAWQCCQCCWEJqWVLYXDANBgkqhkiG9w0BAQUFADBCMQswCQYDVQQGEwJY
