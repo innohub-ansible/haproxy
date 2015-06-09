@@ -1,6 +1,7 @@
 ---
 haproxy_version: 1.5
 haproxy_app_name: haproxy_app_server
+haproxy_ssl: false
 haproxy_ssl_pem: |+
   -----BEGIN CERTIFICATE-----
   MIIB+zCCAWQCCQCCWEJqWVLYXDANBgkqhkiG9w0BAQUFADBCMQswCQYDVQQGEwJY
