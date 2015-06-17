@@ -8,11 +8,11 @@
 Role Variables
 --------------
 
-haproxy_version : Not Required : defaults to 1.5
+haproxy_version : Not Required : Defaults to 1.5
 
-haproxy_app_name : Required : to identify application name
+haproxy_app_name : Required : Identifies application name
 
-haproxy_ssl : Not Required : Sets haproxy's SSL option
+haproxy_ssl : Not Required : Activates haproxy's SSL option : Defaults to false
 
 haproxy_ssl_pem : Not Required : Sets haproxy's SSL certificate and private key
 
@@ -45,16 +45,20 @@ haproxy_ssl_pem : Not Required : Sets haproxy's SSL certificate and private key
     gAGrLMnFDWkogejrk5xVswlMUzjV6TefJAeQDHA1HIIR5g==
     -----END RSA PRIVATE KEY-----
 
-haproxy_stats : Not Required : defaults to enable
+haproxy_stats : Not Required : Defaults to enable
 
-haproxy_algorithm : Not Required : defaults to roundrobin
+haproxy_algorithm : Not Required : Defaults to roundrobin
 
-haproxy_backend_servers : Required : defines backend servers
+haproxy_chk_host : Not Required : Defines host for http check : Defaults to haproxy_app_name
+
+haproxy_chk_path : Not Required : Defines path for http check : Defaults to root "/" path
+
+haproxy_backend_servers : Required : Defines backend servers
 
       - {name: server1, ip: 192.168.1.10, port: 80}
       - {name: server2, ip: 192.168.1.11, port: 80}
 
-haproxy_stats_users : Required : defines user credentials for haproxy's web access
+haproxy_stats_users : Required : Defines user credentials for haproxy's web access : Defaults to 'username' 'password'
 
       - {username: username, password: password}
 
