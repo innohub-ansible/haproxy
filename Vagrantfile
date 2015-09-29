@@ -20,6 +20,10 @@ Vagrant.configure(2) do |config|
     ansible.sudo = true
     ansible.limit = 'all'
     ansible.verbose = 'v'
+
+    ansible.groups = {
+      'app_servers' => ['default']
+    }
   end
 
   # Disable automatic box update checking. If you disable this, then

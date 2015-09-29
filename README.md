@@ -53,10 +53,7 @@ haproxy_chk_host : Not Required : Defines host for http check : Defaults to hapr
 
 haproxy_chk_path : Not Required : Defines path for http check : Defaults to root "/" path
 
-haproxy_backend_servers : Required : Defines backend servers
-
-      - {name: server1, ip: 192.168.1.10, port: 80}
-      - {name: server2, ip: 192.168.1.11, port: 80}
+haproxy_backend_servers_group : Required : Defines backend servers group
 
 haproxy_stats_users : Required : Defines user credentials for haproxy's web access : Defaults to 'username' 'password'
 

@@ -35,8 +35,6 @@ haproxy_stats: enable
 haproxy_algorithm: roundrobin
 haproxy_chk_host: haproxy_app_name
 haproxy_chk_path: "/"
-haproxy_backend_servers:
-  - {name: server1, ip: 192.168.1.10, port: 80}
-  - {name: server2, ip: 192.168.1.11, port: 80}
+haproxy_backend_servers_group: app_servers
 haproxy_stats_users:
   - {username: username, password: password}
