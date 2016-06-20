@@ -31,10 +31,12 @@ haproxy_ssl_pem: |+
   OzkqK6lPVWdw0nU/VNSHMQJAKCdsUCy4Y8+neOXW9AcL95tlzwQ3C2dlbSadea2Y
   gAGrLMnFDWkogejrk5xVswlMUzjV6TefJAeQDHA1HIIR5g==
   -----END RSA PRIVATE KEY-----
-haproxy_stats: enable
 haproxy_algorithm: roundrobin
 haproxy_chk_host: haproxy_app_name
 haproxy_chk_path: "/"
 haproxy_backend_servers_group: app_servers
+haproxy_stats: enable
+haproxy_stats_port: 1936
+haproxy_stats_uri : "/"
 haproxy_stats_users:
   - {username: username, password: password}

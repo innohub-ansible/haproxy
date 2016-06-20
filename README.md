@@ -45,15 +45,17 @@ haproxy_ssl_pem : Not Required : Sets haproxy's SSL certificate and private key
     gAGrLMnFDWkogejrk5xVswlMUzjV6TefJAeQDHA1HIIR5g==
     -----END RSA PRIVATE KEY-----
 
-haproxy_stats : Not Required : Defaults to enable
-
-haproxy_algorithm : Not Required : Defaults to roundrobin
-
 haproxy_chk_host : Not Required : Defines host for http check : Defaults to haproxy_app_name
 
 haproxy_chk_path : Not Required : Defines path for http check : Defaults to root "/" path
 
 haproxy_backend_servers_group : Required : Defines backend servers group
+
+haproxy_stats : Not Required : Defaults to enable
+
+haproxy_stats_port: Not Required : Defaults to 1936
+
+haproxy_stats_uri : Not Required : Defaults to "/"
 
 haproxy_stats_users : Required : Defines user credentials for haproxy's web access : Defaults to 'username' 'password'
 

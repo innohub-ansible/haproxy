@@ -40,3 +40,6 @@
   yum: name=socat state=present
   when: ansible_os_family == "RedHat"
   tags: packages
+
+- name: Reload haproxy
+  service: name=haproxy state=reloaded
