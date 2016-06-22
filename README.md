@@ -10,7 +10,11 @@ Role Variables
 
 haproxy_version : Not Required : Defaults to 1.5
 
-haproxy_app_name : Required : Identifies application name
+haproxy_app_name : Not Required : Identifies application name : Defaults to haproxy_app_server
+
+haproxy_default_timeout_client : Not Required : Defaults to 300000
+
+haproxy_default_timeout_server : Not Required : Defaults to 300000
 
 haproxy_ssl : Not Required : Activates haproxy's SSL option : Defaults to false
 
