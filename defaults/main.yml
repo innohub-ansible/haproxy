@@ -1,9 +1,10 @@
 ---
 haproxy_version: 1.5
-haproxy_app_name: haproxy_app_server
+haproxy_user: haproxy
+haproxy_group: haproxy
+haproxy_app_name: application
 haproxy_default_timeout_client: 300000
 haproxy_default_timeout_server: 300000
-haproxy_ssl: false
 haproxy_ssl_pem: |+
   -----BEGIN CERTIFICATE-----
   MIIB+zCCAWQCCQCCWEJqWVLYXDANBgkqhkiG9w0BAQUFADBCMQswCQYDVQQGEwJY
@@ -33,12 +34,8 @@ haproxy_ssl_pem: |+
   OzkqK6lPVWdw0nU/VNSHMQJAKCdsUCy4Y8+neOXW9AcL95tlzwQ3C2dlbSadea2Y
   gAGrLMnFDWkogejrk5xVswlMUzjV6TefJAeQDHA1HIIR5g==
   -----END RSA PRIVATE KEY-----
-haproxy_algorithm: roundrobin
-haproxy_chk_host: haproxy_app_name
-haproxy_chk_path: "/"
-haproxy_backend_servers_group: app_servers
 haproxy_stats: enable
 haproxy_stats_port: 1936
 haproxy_stats_uri : "/"
-haproxy_stats_users:
+haproxy_stats_auths:
   - {username: username, password: password}

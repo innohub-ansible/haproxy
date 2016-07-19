@@ -15,7 +15,6 @@
   tags: packages
 
 - name: Copy SSL certificate
-  when: haproxy_ssl
   template: src=ssl.pem dest=/etc/haproxy/ssl.pem
 
 - name: Configure haproxy
